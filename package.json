@@ -1,5 +1,6 @@
 {
   "name": "coralhub",
+  "homepage": "https://coralheavens.github.io/coralhub/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
