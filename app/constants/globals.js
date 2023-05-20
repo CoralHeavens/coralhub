@@ -1,1 +1,0 @@
-export const BACKGROUND_URL = 'https://lh3.googleusercontent.com/drive-viewer/AFGJ81qji0OkHjcgfDT1db7r4pvyPObMhckxcR6JHCT-5s1DUAlXfCVl9Z99KQYXVChoy9Q51z-nf2TJv6yPdY6KEpgbnEBqNQ=s2560';
