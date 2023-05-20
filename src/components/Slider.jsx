@@ -32,7 +32,7 @@ export default function Slider({
         }
 
         if (focus >= items.length - 1) {
-            rightPhantom = Array.from({length: focus - items.length - 1});
+            rightPhantom = Array.from({length: focus - (items.length - 1)});
         }
 
         return [
@@ -43,16 +43,29 @@ export default function Slider({
     }, [items, focus])
 
     const memoSlides = useMemo(() => {
-        return phantomItems.map((slide, index) => (
-            <div key={`slide${index}`} className={joinClassNames(
-                `box${index + 1}`, '' +
-                'text-6xl relative',
-                slide === undefined && 'hidden',
-                index !== SIDE_SLIDES && 'pointer-events-none'
-            )}>
-                {slide}
-            </div>
-        ))
+        return phantomItems.map((slide, index) => {
+            let item = <div/>;
+            let title = '';
+
+            if (slide) {
+                item = slide.item;
+                title = slide.title;
+            }
+
+            return (
+                <div key={`slide${index}`} className={joinClassNames(
+                    `box${index + 1}`,
+                    'text-6xl relative',
+                    index !== SIDE_SLIDES && 'hidden lg:block',
+                    !slide && '!hidden',
+                    index !== SIDE_SLIDES && 'pointer-events-none')}
+                >
+                    {item}
+                    <div className='pointer-events-none absolute top-0 left-0 w-screen h-[20vh] bg-gradient-to-b from-black to-[0, 0, 0, 0]' />
+                    <div className='absolute w-full text-base md:text-xl lg:text-2xl text-center top-0 pointer-events-none truncate px-4'>{title}</div>
+                </div>
+            )
+        })
     }, [phantomItems])
 
     return (
@@ -61,16 +74,20 @@ export default function Slider({
                 {memoSlides}
             </div>
             <button
-                disabled={focus <= 0}
                 onClick={prevSlide}
-                className='button -ml-72'
+                className={joinClassNames(
+                    'button left-8',
+                    focus <= 0 && 'hidden'
+                )}
             >
                 Prev
             </button>
             <button
-                disabled={focus >= items.length - 1}
                 onClick={nextSlide}
-                className='button -mr-72'
+                className={joinClassNames(
+                    'button right-8',
+                    focus >= items.length - 1 && 'hidden'
+                )}
             >
                 Next
             </button>

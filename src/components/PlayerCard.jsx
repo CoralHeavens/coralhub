@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import Spinner from "./Spinner";
 import useWindowSize from "../hooks/useWindowSize";
 
@@ -8,19 +8,27 @@ export default function PlayerCard({
     index
 }) {
     const [isLoaded, updateIsLoaded] = useState(false);
+    const [playerSize, updatePlayerSize] = useState({ width: 0, height: 0 })
     const size = useWindowSize();
+    const containerRef = useRef();
+
+    useEffect(() => {
+        updatePlayerSize({
+            width: containerRef.current.offsetWidth,
+            height: containerRef.current.offsetHeight
+        })
+    }, [size])
 
     return (
-        <div className='w-full h-full bg-black rounded-[20px]'>
+        <div className='w-full h-full bg-black rounded-[20px]' ref={containerRef}>
             <iframe
                 title={`${title}-${index}`}
                 className={isLoaded ? 'cursor-pointer relative rounded-[20px]' : 'hidden'}
-                width={size.width * 0.6}
-                height={size.height * 0.6}
+                width={playerSize.width}
+                height={playerSize.height}
                 src={url}
                 onLoad={() => updateIsLoaded(true)}
-                allow={"fullscreen"}
-            ></iframe>
+                allow={"fullscreen"}></iframe>
             <Spinner isLoaded={isLoaded} />
         </div>
     )

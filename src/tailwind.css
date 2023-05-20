@@ -11,7 +11,7 @@ html {
 }
 
 .button {
-    @apply absolute bottom-10 text-4xl
+    @apply absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-md p-4 md:p-12 lg:py-16 lg:px-24 rounded-3xl shadow-2xl
 }
 
 .slider-container{
@@ -89,8 +89,7 @@ html {
     z-index:3;
 }
 .slider [class*="box"]:nth-child(4) {
-    width: 60vw;
-    height: 60vh;
+    @apply w-[100vw] lg:w-[60vw] aspect-video;
     border-color: #c92026;
     color: #fff;
     transform: scale(1) translate(-50%,-50%);
