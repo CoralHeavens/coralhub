@@ -41,7 +41,7 @@ export default function Slider({
             ...items.slice(startIndex, startIndex + VISIBLE_SLIDES),
             ...rightPhantom,
         ]
-    }, [items, focus])
+    }, [items, focus, startIndex])
 
     const memoSlides = useMemo(() => {
         return phantomItems.map((slide, index) => {
