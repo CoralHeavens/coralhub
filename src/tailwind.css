@@ -6,12 +6,20 @@ html {
     @apply text-white m-0 overflow-hidden
 }
 
+div {
+    @apply transition-all duration-[0.7s]
+}
+
 :root {
     --card-bg: black;
 }
 
 .button {
-    @apply absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-md p-4 md:p-12 lg:py-16 lg:px-24 rounded-3xl shadow-2xl
+    @apply transition-all duration-[0.7s] absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-lg p-4 md:p-12 lg:py-16 lg:px-24 rounded-[90px] shadow-2xl
+}
+
+.button:hover {
+    @apply text-fuchsia-500
 }
 
 .slider-container{

@@ -56,7 +56,7 @@ export default function Slider({
                 <div key={`slide${index}`} className={joinClassNames(
                     `box${index + 1}`,
                     'text-6xl relative',
-                    index !== SIDE_SLIDES && 'hidden lg:block',
+                    index !== SIDE_SLIDES && 'hidden xl:block',
                     !slide && '!hidden',
                     index !== SIDE_SLIDES && 'pointer-events-none')}
                 >
