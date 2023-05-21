@@ -10,6 +10,8 @@ export default function Slider({
     saveKey = 'sliderFocus'
 }) {
     const [focus, updateFocus] = useState(load(saveKey) ?? 0);
+    const startIndex = focus >= SIDE_SLIDES ? focus - SIDE_SLIDES : 0;
+
     const prevSlide = () => {
         const nextFocus = focus - 1;
         updateFocus(nextFocus);
@@ -23,7 +25,6 @@ export default function Slider({
     }
 
     const phantomItems = useMemo(() => {
-        const startIndex = focus >= SIDE_SLIDES ? focus - SIDE_SLIDES : 0;
         let leftPhantom = [];
         let rightPhantom = [];
 
@@ -53,15 +54,16 @@ export default function Slider({
             }
 
             return (
-                <div key={`slide${index}`} className={joinClassNames(
+                <div
+                    key={`slide${index + 1}`}
+                    className={joinClassNames(
                     `box${index + 1}`,
                     'text-6xl relative',
-                    index !== SIDE_SLIDES && 'hidden xl:block',
-                    !slide && '!hidden',
-                    index !== SIDE_SLIDES && 'pointer-events-none')}
-                >
+                    index !== SIDE_SLIDES ? 'hidden xl:block pointer-events-none' : '',
+                    !slide && '!hidden')
+                }>
                     {item}
-                    <div className='pointer-events-none absolute top-0 left-0 w-screen h-[20vh] bg-gradient-to-b from-black to-[0, 0, 0, 0]' />
+                    <div className='top-0 fog-top' />
                     <div className='absolute w-full text-base md:text-xl lg:text-2xl text-center top-0 pointer-events-none truncate px-4'>{title}</div>
                 </div>
             )

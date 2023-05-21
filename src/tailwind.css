@@ -22,6 +22,14 @@ div {
     @apply text-fuchsia-500
 }
 
+.fog-top {
+    @apply pointer-events-none absolute top-0 left-0 w-screen h-[20vh] bg-gradient-to-b from-black;
+}
+
+.fog-bottom {
+    @apply pointer-events-none absolute bottom-0 left-0 w-screen h-[20vh] bg-gradient-to-t from-black;
+}
+
 .slider-container{
     width:100vw;
     height:80vh;
@@ -104,6 +112,7 @@ div {
     top: 50%;
     z-index:4;
 }
+
 .slider [class*="box"]:nth-child(1){
     left:-13%;}
 .slider [class*="box"]:nth-child(2){
@@ -130,6 +139,31 @@ div {
 @keyframes firstChild {
     0% {left:100%; transform: scale(0.2) translate(-50%,-50%);}
     100% {left: -13%; transform: scale(0.2) translate(-50%,-50%);}
+}
+
+@keyframes glowworm-motion {
+    0% {
+        transform: translateX(-0.9em) scale(0);
+    }
+
+    9%,
+    11% {
+        transform: translateX(-0.9em) scale(1);
+    }
+
+    48%,
+    51% {
+        transform: translateX(0) scale(1);
+    }
+
+    89%,
+    91% {
+        transform: translateX(0.9em) scale(1);
+    }
+
+    100% {
+        transform: translateX(0.9em) scale(0);
+    }
 }
 
 .container {
