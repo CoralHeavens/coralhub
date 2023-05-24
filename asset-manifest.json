@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/coralhub/static/css/main.207b66a5.css",
-    "main.js": "/coralhub/static/js/main.7b9715aa.js",
+    "main.css": "/coralhub/static/css/main.5f7d44e7.css",
+    "main.js": "/coralhub/static/js/main.22fdf650.js",
     "index.html": "/coralhub/index.html",
-    "main.207b66a5.css.map": "/coralhub/static/css/main.207b66a5.css.map",
-    "main.7b9715aa.js.map": "/coralhub/static/js/main.7b9715aa.js.map"
+    "main.5f7d44e7.css.map": "/coralhub/static/css/main.5f7d44e7.css.map",
+    "main.22fdf650.js.map": "/coralhub/static/js/main.22fdf650.js.map"
   },
   "entrypoints": [
-    "static/css/main.207b66a5.css",
-    "static/js/main.7b9715aa.js"
+    "static/css/main.5f7d44e7.css",
+    "static/js/main.22fdf650.js"
   ]
 }
