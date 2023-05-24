@@ -15,7 +15,15 @@ div {
 }
 
 .button {
-    @apply transition-all duration-[0.7s] absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-lg p-4 md:p-12 lg:py-16 lg:px-24 rounded-[90px] shadow-2xl
+    @apply transition-all duration-[0.7s] absolute bottom-20 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-lg p-4 md:p-12 lg:py-16 lg:px-24 rounded-[90px] shadow-2xl
+}
+
+.dropdown-children * {
+    @apply !static !bg-transparent !text-white text-base md:text-2xl lg:text-3xl border-none truncate
+}
+
+.dropdown-menu > div {
+    @apply py-8 lg:py-4 text-sm md:text-xl lg:text-[28px] text-center hover:!bg-black hover:bg-opacity-30
 }
 
 .button:hover {
