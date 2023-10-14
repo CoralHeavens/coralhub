@@ -15,7 +15,7 @@ div {
 }
 
 .button {
-    @apply transition-all duration-[0.7s] absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-lg p-4 md:p-12 lg:py-16 lg:px-24 rounded-[90px] shadow-2xl
+    @apply transition-all duration-[0.7s] absolute bottom-0 md:-bottom-16 text-4xl lg:text-6xl backdrop-blur-lg p-4 md:p-6 lg:py-4 lg:px-24 rounded-[90px] shadow-2xl
 }
 
 .button:hover {

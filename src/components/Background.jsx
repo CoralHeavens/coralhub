@@ -1,7 +1,7 @@
-import {BACKGROUND_URL} from "../constants/globals";
 import Spinner from "./Spinner";
 import {useEffect, useRef, useState} from "react";
 import joinClassNames from "../helpers/joinClassNames";
+import BACKGROUND_URL from '../images/wall.jpg';
 
 export default function Background({
     imgURL = BACKGROUND_URL
