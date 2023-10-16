@@ -14,13 +14,13 @@ export default function Slider({
     const startIndex = focus >= SIDE_SLIDES ? focus - SIDE_SLIDES : 0;
 
     const prevSlide = () => {
-        const nextFocus = focus - 1;
+        const nextFocus = +focus - 1;
         updateFocus(nextFocus);
         save(EPISODE_SAVE_KEY, nextFocus);
     }
 
     const nextSlide = () => {
-        const nextFocus = focus + 1;
+        const nextFocus = +focus + 1;
         updateFocus(nextFocus);
         save(EPISODE_SAVE_KEY, nextFocus);
     }
