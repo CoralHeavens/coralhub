@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/coralhub/static/css/main.dddc3585.css",
-    "main.js": "/coralhub/static/js/main.ce02ed08.js",
+    "main.js": "/coralhub/static/js/main.ab1e77ea.js",
     "static/media/wall.jpg": "/coralhub/static/media/wall.9185d406e4f23ab7605a.jpg",
     "index.html": "/coralhub/index.html",
     "main.dddc3585.css.map": "/coralhub/static/css/main.dddc3585.css.map",
-    "main.ce02ed08.js.map": "/coralhub/static/js/main.ce02ed08.js.map"
+    "main.ab1e77ea.js.map": "/coralhub/static/js/main.ab1e77ea.js.map"
   },
   "entrypoints": [
     "static/css/main.dddc3585.css",
-    "static/js/main.ce02ed08.js"
+    "static/js/main.ab1e77ea.js"
   ]
 }
